@@ -5,7 +5,7 @@ config =
 
 module.exports = (robot) ->
   new cronJob
-    cronTime: '0 20 * * * *'
+    cronTime: '0 */10 * * * *'
     onTick: ->
       robot.http('https://manager.cloudautomator.com')
         .header('Authorization', "CAAuth #{config.token}")

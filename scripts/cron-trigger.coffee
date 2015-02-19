@@ -14,8 +14,8 @@ module.exports = (robot) ->
         .post() (err, res, body) ->
           json = JSON.parse body
           if json.result == "ok"
-            msg.send {room: "#{config.channel}"}, "ご心配無用にございます"
+            robot.send {room: "#{config.channel}"}, "ご心配無用にございます"
           else
-            msg.send {room: "#{config.channel}"}, "ご主人様、事件です！"
+            robot.send {room: "#{config.channel}"}, "ご主人様、事件です！"
     start: true
     timeZone: "Asia/Tokyo"

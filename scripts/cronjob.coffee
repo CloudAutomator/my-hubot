@@ -13,8 +13,8 @@ module.exports = (robot) ->
         .post() (err, res, body) ->
           json = JSON.parse body
           if json.result == "ok"
-            msg.send "仰せのままに"
+            msg.send {room: "notifications"}, "仰せのままに"
           else
-            msg.send "ご主人様、事件です！"
+            msg.send {room: "notifications"}, "ご主人様、事件です！"
     start: true
     timeZone: "Asia/Tokyo"
